@@ -1,0 +1,2 @@
+$("#<%= dom_id(@todo) %>").replaceWith("<%= j render("form", todo: @todo) %>");
+$('#<%= dom_id(@todo) %> input[type="text"]').focus();

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root "todo_lists#show"
 
   resources :todo_lists, only: [], shallow: true do
-    resources :todos, only: [:create, :destroy] do
+    resources :todos, only: [:create, :edit, :update, :destroy] do
       post :toggle, on: :member
+      get :cancel_edit, on: :member
     end
   end
 
