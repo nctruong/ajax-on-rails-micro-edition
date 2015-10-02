@@ -17,4 +17,19 @@ class ManageTodosTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("My first todo item")
   end
+
+  test "complete a todo" do
+    todo = todos(:uncompleted)
+
+    visit root_path
+
+    assert_difference "all('.completed li').count", 1 do
+      assert_difference "all('.uncompleted li').count", -1 do
+        within "#todo_#{todo.id}" do
+          find('input[type="checkbox"]').click
+          sleep 0.1
+        end
+      end
+    end
+  end
 end

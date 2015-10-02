@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root "todo_lists#show"
 
   resources :todo_lists, only: [], shallow: true do
-    resources :todos, only: :create
+    resources :todos, only: :create do
+      post :toggle, on: :member
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

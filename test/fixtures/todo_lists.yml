@@ -1,4 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+todo_list:
   name: My awesome Todo list!

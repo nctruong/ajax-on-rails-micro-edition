@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+uncompleted:
+  name: I am not done yet!
   completed: false
-  todo_list_id: 
+  todo_list: todo_list
 
-two:
-  name: MyString
-  completed: false
-  todo_list_id: 
+completed:
+  name: I am done!
+  completed: true
+  todo_list: todo_list

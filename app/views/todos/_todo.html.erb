@@ -1,3 +1,4 @@
-<li>
+<li id="<%= dom_id(todo) %>">
+  <%= check_box_tag dom_id(todo, :checkbox), todo.completed?, todo.completed?, data: { url: toggle_todo_path(todo), method: :post, remote: true } %>
   <%= todo.name %>
 </li>

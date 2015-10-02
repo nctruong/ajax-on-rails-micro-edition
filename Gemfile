@@ -27,4 +27,5 @@ end
 group :test do
   gem "capybara"
   gem "capybara-webkit"
+  gem "launchy"
 end

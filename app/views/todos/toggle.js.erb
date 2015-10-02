@@ -1,0 +1,6 @@
+$("#<%= dom_id(@todo) %>").remove();
+<% if @todo.completed %>
+$(".todos.completed").prepend("<%= j render(@todo) %>");
+<% else %>
+$(".todos.uncompleted").append("<%= j render(@todo) %>");
+<% end %>

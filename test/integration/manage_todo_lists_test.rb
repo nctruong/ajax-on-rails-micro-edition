@@ -2,7 +2,7 @@ require "test_helper"
 
 class ManageTodoListsTest < ActionDispatch::IntegrationTest
   test "display todo list page" do
-    list = todo_lists(:one)
+    list = todo_lists(:todo_list)
 
     visit root_path
 

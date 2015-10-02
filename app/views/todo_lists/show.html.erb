@@ -8,6 +8,10 @@
   </div>
 <% end %>
 
-<ul class="todos">
-  <%= render @todo_list.todos %>
+<ul class="todos uncompleted list-unstyled">
+  <%= render @todo_list.todos.uncompleted %>
+</ul>
+
+<ul class="todos completed list-unstyled">
+  <%= render @todo_list.todos.completed %>
 </ul>

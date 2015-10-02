@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TodosControllerTest < ActionController::TestCase
   def setup
-    @todo_list = todo_lists(:one)
+    @todo_list = todo_lists(:todo_list)
   end
 
   test "create a todo" do
@@ -16,8 +16,17 @@ class TodosControllerTest < ActionController::TestCase
   end
 
   test "create a todo with invalid data" do
-    post :create, todo_list_id: @todo_list.id, todo: { name: "" }
+    xhr :post, :create, todo_list_id: @todo_list.id, todo: { name: "" }
 
     assert_response :ok
+  end
+
+  test "toggle todo" do
+    todo = todos(:uncompleted)
+
+    xhr :post, :toggle, id: todo.id
+
+    todo.reload
+    assert todo.completed?
   end
 end
