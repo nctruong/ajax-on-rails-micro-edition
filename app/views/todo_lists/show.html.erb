@@ -1,6 +1,6 @@
 <h1><%= @todo_list.name %></h1>
 
-<%= form_for [@todo_list, @todo] do |f| %>
+<%= form_for [@todo_list, @todo], remote: true do |f| %>
   <div class="form-group">
     <%= f.text_field :name, class: "form-control" %>
   </div>
@@ -8,6 +8,6 @@
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
-<ul>
+<ul class="todos">
   <%= render @todo_list.todos %>
 </ul>

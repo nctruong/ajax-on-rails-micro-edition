@@ -3,10 +3,8 @@ class TodosController < ApplicationController
     @todo_list = TodoList.find(params[:todo_list_id])
     @todo = @todo_list.todos.build(todo_params)
 
-    if @todo.save
-      redirect_to root_path
-    else
-      render "todo_lists/show"
+    unless @todo.save
+      head :ok
     end
   end
 

@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class ManageTotosTest < ActionDispatch::IntegrationTest
+  def setup
+    Capybara.current_driver = :webkit
+  end
+
+  def teardown
+    Capybara.current_driver = :rack_test
+  end
+
   test "create a todo" do
     visit root_path
 

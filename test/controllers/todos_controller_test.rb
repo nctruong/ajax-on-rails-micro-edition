@@ -7,7 +7,7 @@ class TodosControllerTest < ActionController::TestCase
 
   test "create a todo" do
     assert_difference "Todo.count", 1 do
-      post :create, todo_list_id: @todo_list.id, todo: { name: "My first todo" }
+      xhr :post, :create, todo_list_id: @todo_list.id, todo: { name: "My first todo" }
     end
 
     todo = Todo.last
@@ -18,6 +18,6 @@ class TodosControllerTest < ActionController::TestCase
   test "create a todo with invalid data" do
     post :create, todo_list_id: @todo_list.id, todo: { name: "" }
 
-    assert_select ".field_with_errors"
+    assert_response :ok
   end
 end

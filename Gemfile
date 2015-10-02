@@ -10,16 +10,20 @@ gem "sqlite3"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
+group :development do
+  gem "spring"
+  gem "web-console", "~> 2.0"
+end
+
 group :development, :test do
   gem "byebug"
-  gem "capybara"
 end
 
 group :doc do
   gem "sdoc", "~> 0.4.0"
 end
 
-group :development do
-  gem "spring"
-  gem "web-console", "~> 2.0"
+group :test do
+  gem "capybara"
+  gem "capybara-webkit"
 end
