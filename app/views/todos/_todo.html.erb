@@ -4,8 +4,10 @@
     <%= todo.name %>
   </span>
 
-  <span class="actions pull-right">
-    <%= link_to "Edit", edit_todo_path(todo), remote: true %> /
-    <%= link_to "Delete", todo_path(todo), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
-  </span>
+  <% unless todo.completed? %>
+    <span class="actions pull-right">
+      <%= link_to "Edit", edit_todo_path(todo), remote: true %> /
+      <%= link_to "Delete", todo_path(todo), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+    </span>
+  <% end %>
 </li>
