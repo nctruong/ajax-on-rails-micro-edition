@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ManageTotosTest < ActionDispatch::IntegrationTest
+class ManageTodosTest < ActionDispatch::IntegrationTest
   def setup
     Capybara.current_driver = :webkit
   end
