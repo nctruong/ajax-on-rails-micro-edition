@@ -29,4 +29,12 @@ class TodosControllerTest < ActionController::TestCase
     todo.reload
     assert todo.completed?
   end
+
+  test "delete todo" do
+    todo = todos(:uncompleted)
+
+    assert_difference "Todo.count", -1 do
+      xhr :delete, :destroy, id: todo.id
+    end
+  end
 end

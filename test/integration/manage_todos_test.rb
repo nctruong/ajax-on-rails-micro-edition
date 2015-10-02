@@ -9,7 +9,7 @@ class ManageTodosTest < ActionDispatch::IntegrationTest
     Capybara.current_driver = :rack_test
   end
 
-  test "create a todo" do
+  test "create todo" do
     visit root_path
 
     fill_in :todo_name, with: "My first todo item"
@@ -18,7 +18,7 @@ class ManageTodosTest < ActionDispatch::IntegrationTest
     assert page.has_content?("My first todo item")
   end
 
-  test "complete a todo" do
+  test "complete todo" do
     todo = todos(:uncompleted)
 
     visit root_path
@@ -31,5 +31,18 @@ class ManageTodosTest < ActionDispatch::IntegrationTest
         end
       end
     end
+  end
+
+  test "delete todo" do
+    todo = todos(:uncompleted)
+
+    visit root_path
+
+    find("#todo_#{todo.id}").hover
+    within "#todo_#{todo.id}" do
+      click_link "Delete"
+    end
+
+    assert page.has_no_css?("#todo_#{todo.id}")
   end
 end

@@ -3,4 +3,8 @@
   <span class="name">
     <%= todo.name %>
   </span>
+
+  <span class="actions pull-right">
+    <%= link_to "Delete", todo_path(todo), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  </span>
 </li>

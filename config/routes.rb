@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "todo_lists#show"
 
   resources :todo_lists, only: [], shallow: true do
-    resources :todos, only: :create do
+    resources :todos, only: [:create, :destroy] do
       post :toggle, on: :member
     end
   end
