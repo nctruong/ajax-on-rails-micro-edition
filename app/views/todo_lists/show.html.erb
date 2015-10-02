@@ -1,11 +1,13 @@
-<h1><%= @todo_list.name %></h1>
+<h1 class="text-center"><%= @todo_list.name %></h1>
+
+<hr>
 
 <%= form_for [@todo_list, @todo], remote: true do |f| %>
   <div class="form-group">
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Add a new todo..." %>
   </div>
 
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.submit class: "btn btn-primary", hidden: ""%>
 <% end %>
 
 <ul class="todos">
