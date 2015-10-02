@@ -1,2 +1,13 @@
 <h1><%= @todo_list.name %></h1>
-<p>Find me in app/views/todo_lists/show.html.erb</p>
+
+<%= form_for [@todo_list, @todo] do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+  <%= render @todo_list.todos %>
+</ul>
