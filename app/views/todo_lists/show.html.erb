@@ -9,9 +9,9 @@
 <% end %>
 
 <ul class="todos uncompleted list-unstyled">
-  <%= render @todo_list.todos.uncompleted %>
+  <%= render @todo_list.uncompleted_todos %>
 </ul>
 
 <ul class="todos completed list-unstyled">
-  <%= render @todo_list.todos.completed %>
+  <%= render @todo_list.completed_todos %>
 </ul>

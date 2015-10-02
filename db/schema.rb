@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002065718) do
+ActiveRecord::Schema.define(version: 20151002114934) do
 
   create_table "todo_lists", force: :cascade do |t|
     t.string   "name"
@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 20151002065718) do
 
   create_table "todos", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "completed"
+    t.boolean  "completed",    default: false
     t.integer  "todo_list_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "position"
   end
 
   add_index "todos", ["todo_list_id"], name: "index_todos_on_todo_list_id"

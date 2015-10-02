@@ -4,8 +4,10 @@ uncompleted:
   name: I am not done yet!
   completed: false
   todo_list: todo_list
+  position: 1
 
 completed:
   name: I am done!
   completed: true
   todo_list: todo_list
+  position: 1
