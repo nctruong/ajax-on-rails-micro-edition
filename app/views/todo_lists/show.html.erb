@@ -1,17 +1,23 @@
-<h1 class="text-center"><%= @todo_list.name %></h1>
+<div class="header clearfix">
+  <%= link_to "Settings", edit_todo_list_path(@todo_list), remote: true, class: "pull-right" %>
+</div>
 
-<hr>
+<div class="todo-list">
+  <h1 class="text-center"><%= @todo_list.name %></h1>
 
-<%= form_for [@todo_list, @todo], remote: true do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Add a new todo...", autocomplete: :off %>
-  </div>
-<% end %>
+  <hr>
 
-<ul class="todos uncompleted list-unstyled">
-  <%= render @todo_list.uncompleted_todos %>
-</ul>
+  <%= form_for [@todo_list, @todo], remote: true do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder: "Add a new todo...", autocomplete: :off %>
+    </div>
+  <% end %>
 
-<ul class="todos completed list-unstyled">
-  <%= render @todo_list.completed_todos %>
-</ul>
+  <ul class="todos uncompleted list-unstyled">
+    <%= render @todo_list.uncompleted_todos %>
+  </ul>
+
+  <ul class="todos completed list-unstyled">
+    <%= render @todo_list.completed_todos %>
+  </ul>
+</div>

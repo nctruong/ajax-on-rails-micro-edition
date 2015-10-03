@@ -1,0 +1,3 @@
+$("#modal, .modal-backdrop").remove();
+$("body").append("<%= j render("form", todo_list: @todo_list) %>");
+$("#modal").modal();
