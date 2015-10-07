@@ -1,2 +1,5 @@
+// Add new todo to the end of the list
 $("ul.todos.uncompleted").append("<%= j render(@todo) %>");
+
+// Clear the input so user can add another todo
 $("#todo_name").val("");

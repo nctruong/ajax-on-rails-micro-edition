@@ -1,6 +1,11 @@
+// Remove the todo from its previous list
 $("#<%= dom_id(@todo) %>").remove();
+
+// Add todo its new list
 <% if @todo.completed %>
+  // If it is completed then put it in the beggining of the completed todos list
   $(".todos.completed").prepend("<%= j render(@todo) %>");
 <% else %>
+  // If it is not completed then put it in the end of the uncompleted todos list
   $(".todos.uncompleted").append("<%= j render(@todo) %>");
 <% end %>

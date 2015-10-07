@@ -1,2 +1,5 @@
+// Replace todo with the edit form
 $("#<%= dom_id(@todo) %>").replaceWith("<%= j render("form", todo: @todo) %>");
+
+// Focus the input box so user can directly start to type
 $('#<%= dom_id(@todo) %> input[type="text"]').focus();

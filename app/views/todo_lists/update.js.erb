@@ -1,2 +1,6 @@
+// Update the heading and highlight it after the change, so user can easily see
+// what changed
 $("h1").html("<%= j @todo_list.name %>").effect("highlight", {}, 1500);
+
+// Hide the settings form
 $("#modal").modal("hide");

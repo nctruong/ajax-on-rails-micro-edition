@@ -1,3 +1,8 @@
+// Remove previous modal
 $("#modal, .modal-backdrop").remove();
+
+// Add new modal before the </body> tag
 $("body").append("<%= j render("form", todo_list: @todo_list) %>");
+
+// Show the modal
 $("#modal").modal();
